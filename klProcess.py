@@ -46,6 +46,7 @@ def dataFilter(data):
     return data
 
 #pandas建立数据表 
+<<<<<<< HEAD
 def dataTable(data1,data2,data3,data4,name1,name2,name3,name4):
     s = {name1:data1,name2:data2,name3:data3,name4:data4}
     df = pd.DataFrame(s)
@@ -132,22 +133,41 @@ def dataAnalyse_avSeason(data,name,value):
 #进一步分析并得出结论
 def dataProc(data): 
     print(1)
+=======
+def dataTable(data1,data2,name):
+    s = pd.Series(data2,index=data1)
+    df = pd.DataFrame(s,columns = [name])
+    return df
+#处理数据获得分析几轮
+def dataProc(data):
+    Sum = data.sum()
+>>>>>>> 464d531c2f98c8c7768f9f69c87b1c07ac73c3df
     
 #NASA数据
 year = []
 mon = []
 day = []
+<<<<<<< HEAD
 #clr_dif = [] #Average Clear Sky Diffuse Insolation
 #year,mon,day,clr_dif = getData("DI_22.txt")
 #clr_dnr = [] #Average Clear Sky Direct Normal Radiation 
 #clr_dnr = getData("DNI_22.txt")[3]
 swv_dwn = [] #Average Insolation Incident On A Horizontal Surface (kWh/m^2/day) 
 year,mon,day,swv_dwn = getData("HI_22.txt")
+=======
+clr_dif = [] #Average Clear Sky Diffuse Insolation
+year,mon,day,clr_dif = getData("DI_22.txt")
+clr_dnr = [] #Average Clear Sky Direct Normal Radiation 
+clr_dnr = getData("DNI_22.txt")[3]
+swv_dwn = [] #Average Insolation Incident On A Horizontal Surface (kWh/m^2/day) 
+swv_dwn = getData("HI_22.txt")[3]
+>>>>>>> 464d531c2f98c8c7768f9f69c87b1c07ac73c3df
 #meteonorm数据
 G_Gh = []
 G_Dh = []
 Ta = []
 FF = []
+<<<<<<< HEAD
 #G_Gh,G_Dh,Ta,FF = getData("Kunlun_Station-hour.txt")
 #滤波
 swv_dwn = dataFilter(swv_dwn)
@@ -155,6 +175,12 @@ df = dataTable(year,mon,day,swv_dwn.astype(float),'year','mon','day','swv_dwn')#
 Light = df[df['swv_dwn']>0]
 dataAnalyse_avSeason(Light,'mon','swv_dwn')
 df.plot()
+=======
+G_Gh,G_Dh,Ta,FF = getData("Kunlun_Station-hour.txt")
+#滤波
+clr_dif = dataFilter(clr_dif)
+df = dataTable(year,clr_dif.astype(float),"clr_dif")# astpye转化数组数据格式
+>>>>>>> 464d531c2f98c8c7768f9f69c87b1c07ac73c3df
 
 
 
