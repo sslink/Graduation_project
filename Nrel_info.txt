@@ -1,0 +1,1 @@
+DATE (MM/DD/YYYY),HOUR-MST,Avg Global CMP11 (cor) [W/m^2],Avg Direct CHP1-1 [W/m^2],Avg Diffuse CMP11 (cor) [W/m^2],Avg Zenith Angle [degrees],Avg Tower Dry Bulb Temp [deg C],Avg Tower RH [%],Avg Total Cloud Cover [%],Avg Avg Wind Speed @ 6ft [m/s],Avg Sea-Level Pressure (Est) [mBar],Avg Precipitation [mm]
